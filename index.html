@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Hoxton Master Banner</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="ad.size" content="width=300,height=250">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+
+    <!-- GSAP -->
+    <script src="https://s0.2mdn.net/ads/studio/cached_libs/gsap_3.5.1_min.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #container {
+            display: none;
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================================
+         BANNER CONTAINER
+    ========================================== -->
+
+    <div id="container">
+
+        <!-- =====================================
+             CORE / UI
+        ====================================== -->
+
+        <div id="background" class="abs full"></div>
+        <div id="keyline" class="abs full"></div>
+        <div id="exit_btn" class="abs full"></div>
+
+
+        <!-- =====================================
+             BACKGROUND LAYER
+        ====================================== -->
+
+        <div id="bg_container" class="bg-container">
+
+            <img
+                id="f1_bg_image"
+                class="frame-bg hidden"
+                src="images/noimage.png"
+                alt=""
+            >
+
+            <img
+                id="f1_bg_overlay"
+                class="frame-overlay hidden"
+                src="images/noimage.png"
+                alt=""
+            >
+
+
+            <img
+                id="f2_bg_image"
+                class="frame-bg hidden"
+                src="images/noimage.png"
+                alt=""
+            >
+
+            <img
+                id="f2_bg_overlay"
+                class="frame-overlay hidden"
+                src="images/noimage.png"
+                alt=""
+            >
+
+
+            <img
+                id="f3_bg_image"
+                class="frame-bg hidden"
+                src="images/noimage.png"
+                alt=""
+            >
+
+            <img
+                id="f3_bg_overlay"
+                class="frame-overlay hidden"
+                src="images/noimage.png"
+                alt=""
+            >
+
+
+            <img
+                id="f4_bg_image"
+                class="frame-bg hidden"
+                src="images/noimage.png"
+                alt=""
+            >
+
+            <img
+                id="f4_bg_overlay"
+                class="frame-overlay hidden"
+                src="images/noimage.png"
+                alt=""
+            >
+
+
+            <img
+                id="f5_bg_image"
+                class="frame-bg hidden"
+                src="images/noimage.png"
+                alt=""
+            >
+
+            <img
+                id="f5_bg_overlay"
+                class="frame-overlay hidden"
+                src="images/noimage.png"
+                alt=""
+            >
+
+        </div>
+
+
+        <!-- =====================================
+             PANEL
+        ====================================== -->
+
+        <div id="panel" class="panel"></div>
+
+
+        <!-- =====================================
+             FRAME CONTAINER
+        ====================================== -->
+
+        <div id="frame_container" class="frame-container">
+
+
+            <!-- =================================
+                 FRAME 01
+            ================================== -->
+
+            <div id="frame01" class="frame hidden">
+
+                <div id="f1_badge" class="badge"></div>
+
+                <div id="f1_copy_container" class="copy-container">
+
+                    <div
+                        id="f1_copy_campaign_badge"
+                        class="copy-campaign-badge hidden">
+                    </div>
+
+                    <div
+                        id="f1_copy_headline"
+                        class="copy-headline hidden">
+                    </div>
+
+                    <div
+                        id="f1_copy_subline"
+                        class="copy-subline hidden">
+                    </div>
+
+                    <div
+                        id="f1_extra"
+                        class="copy-extra hidden">
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="f1_product_name"
+                    class="product-name hidden">
+                </div>
+
+                <img
+                    id="f1_product_image"
+                    class="product-image hidden"
+                    src="images/noimage.png"
+                    alt=""
+                >
+
+                <img
+                    id="f1_badge_image"
+                    class="badge-image hidden"
+                    src="images/noimage.png"
+                    alt=""
+                >
+
+            </div>
+
+
+            <!-- =================================
+                 FRAME 02
+            ================================== -->
+
+            <div id="frame02" class="frame hidden">
+
+                <div id="f2_badge" class="badge"></div>
+
+                <div id="f2_copy_container" class="copy-container">
+
+                    <div
+                        id="f2_copy_campaign_badge"
+                        class="copy-campaign-badge hidden">
+                    </div>
+
+                    <div
+                        id="f2_copy_headline"
+                        class="copy-headline hidden">
+                    </div>
+
+                    <div
+                        id="f2_copy_subline"
+                        class="copy-subline hidden">
+                    </div>
+
+                    <div
+                        id="f2_extra"
+                        class="copy-extra hidden">
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="f2_product_name"
+                    class="product-name hidden">
+                </div>
+
+                <img
+                    id="f2_product_image"
+                    class="product-image hidden"
+                    src="images/noimage.png"
+                    alt=""
+                >
+
+                <img
+                    id="f2_badge_image"
+                    class="badge-image hidden"
+                    src="images/noimage.png"
+                    alt=""
+                >
+
+            </div>
+
+
+            <!-- =================================
+                 FRAME 03
+            ================================== -->
+
+            <div id="frame03" class="frame hidden">
+
+                <div id="f3_badge" class="badge"></div>
+
+                <div id="f3_copy_container" class="copy-container">
+
+                    <div
+                        id="f3_copy_campaign_badge"
+                        class="copy-campaign-badge hidden">
+                    </div>
+
+                    <div
+                        id="f3_copy_headline"
+                        class="copy-headline hidden">
+                    </div>
+
+                    <div
+                        id="f3_copy_subline"
+                        class="copy-subline hidden">
+                    </div>
+
+                    <div
+                        id="f3_extra"
+                        class="copy-extra hidden">
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="f3_product_name"
+                    class="product-name hidden">
+                </div>
+
+                <img
+                    id="f3_product_image"
+                    class="product-image hidden"
+                    src="images/noimage.png"
+                    alt=""
+                >
+
+                <img
+                    id="f3_badge_image"
+                    class="badge-image hidden"
+                    src="images/noimage.png"
+                    alt=""
+                >
+
+            </div>
+
+
+            <!-- =================================
+                 FRAME 04
+            ================================== -->
+
+            <div id="frame04" class="frame hidden">
+
+                <div id="f4_badge" class="badge"></div>
+
+                <div id="f4_copy_container" class="copy-container">
+
+                    <div
+                        id="f4_copy_campaign_badge"
+                        class="copy-campaign-badge hidden">
+                    </div>
+
+                    <div
+                        id="f4_copy_headline"
+                        class="copy-headline hidden">
+                    </div>
+
+                    <div
+                        id="f4_copy_subline"
+                        class="copy-subline hidden">
+                    </div>
+
+                    <div
+                        id="f4_extra"
+                        class="copy-extra hidden">
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="f4_product_name"
+                    class="product-name hidden">
+                </div>
+
+                <img
+                    id="f4_product_image"
+                    class="product-image hidden"
+                    src="images/noimage.png"
+                    alt=""
+                >
+
+                <img
+                    id="f4_badge_image"
+                    class="badge-image hidden"
+                    src="images/noimage.png"
+                    alt=""
+                >
+
+            </div>
+
+
+            <!-- =================================
+                 FRAME 05 / END FRAME
+            ================================== -->
+
+            <div id="frame05" class="frame hidden">
+
+                <div id="f5_badge" class="badge"></div>
+
+                <div id="f5_copy_container" class="copy-container">
+
+                    <div
+                        id="f5_copy_campaign_badge"
+                        class="copy-campaign-badge hidden">
+                    </div>
+
+                    <div
+                        id="f5_copy_headline"
+                        class="copy-headline hidden">
+                    </div>
+
+                    <div
+                        id="f5_copy_subline"
+                        class="copy-subline hidden">
+                    </div>
+
+                    <div
+                        id="f5_extra"
+                        class="copy-extra hidden">
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="f5_product_name"
+                    class="product-name hidden">
+                </div>
+
+                <img
+                    id="f5_product_image"
+                    class="product-image hidden"
+                    src="images/noimage.png"
+                    alt=""
+                >
+
+                <img
+                    id="f5_badge_image"
+                    class="badge-image hidden"
+                    src="images/noimage.png"
+                    alt=""
+                >
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================
+             BRAND LAYER
+        ====================================== -->
+
+        <div id="brand_layer" class="brand-layer">
+
+            <div
+                id="brand_logo_container"
+                class="brand-logo-container">
+
+                <img
+                    id="brand_logo_primary"
+                    class="brand-logo"
+                    src="images/noimage.png"
+                    alt=""
+                >
+
+                <img
+                    id="brand_logo_secondary"
+                    class="brand-logo-secondary"
+                    src="images/noimage.png"
+                    alt=""
+                >
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================
+             FUNDING / SPONSOR
+        ====================================== -->
+
+        <div
+            id="funding_container"
+            class="funding-container">
+
+            <img
+                id="funding_logo"
+                class="funding-logo"
+                src="images/noimage.png"
+                alt=""
+            >
+
+            <div
+                id="funding_copy"
+                class="funding-copy">
+            </div>
+
+        </div>
+
+
+        <!-- =====================================
+             CTA
+        ====================================== -->
+
+        <div
+            id="cta_container"
+            class="cta-container">
+
+            <div
+                id="cta"
+                class="cta">
+            </div>
+
+        </div>
+
+
+        <!-- =====================================
+             LEGAL / TOOLTIP
+        ====================================== -->
+
+        <div
+            id="legal_trigger_container"
+            class="legal-trigger-container">
+
+            <div
+                id="legal_trigger_copy"
+                class="legal-trigger-copy">
+            </div>
+
+        </div>
+
+
+        <div
+            id="tooltip"
+            class="tooltip hidden">
+
+            <div
+                id="tooltip_content"
+                class="tooltip-content">
+
+                <div
+                    id="legal_close"
+                    class="legal-close">
+                </div>
+
+                <div
+                    id="legal_copy"
+                    class="legal-copy">
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================
+             REPLAY
+        ====================================== -->
+
+        <div
+            id="btn_replay_container"
+            class="btn-replay-container">
+
+            <img
+                id="btn_replay"
+                class="btn-replay"
+                src="images/replay.svg"
+                alt="Replay"
+            >
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script src="js/hoxton-v7.js"></script>
+
+    <!-- Optional font helper -->
+    <script src="js/checkFontsLoaded.js"></script>
+
+    <!-- Optional GSAP plugin -->
+    <script src="js/SplitText.min.js"></script>
+
+    <!-- Creative animation controller -->
+    <script src="js/creative.js"></script>
+
+    <!-- Dynamic content -->
+    <script src="js/setDynamicContent.js"></script>
+
+    <!-- Hoxton live update -->
+    <script src="js/updateContent.js"></script>
+
+</body>
+
+</html>

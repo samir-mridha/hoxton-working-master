@@ -1,0 +1,1057 @@
+{
+  "name": "Hoxton_Master_Banner_Template_v1",
+  "reportingLabel": "Hoxton_Master_Banner_{width}x{height}",
+  "adType": "HTML5",
+  "adSize": {
+    "width": "300",
+    "height": "250"
+  },
+  "platform": "generic",
+  "backupQuality": "90",
+
+  "content_margin": {
+    "type": "text",
+    "value": "14",
+    "editableGroups": ["Global"]
+  },
+
+  "language": {
+    "type": "array",
+    "value": [
+      { "label": "English", "value": "en", "selected": true },
+      { "label": "French", "value": "fr" },
+      { "label": "German", "value": "de" },
+      { "label": "Spanish", "value": "es" },
+      { "label": "Italian", "value": "it" }
+    ],
+    "editableGroups": ["Global"]
+  },
+
+  "layout_type": {
+    "type": "array",
+    "value": [
+      { "label": "Auto", "value": "auto", "selected": true },
+      { "label": "Layout A", "value": "layout-a" },
+      { "label": "Layout B", "value": "layout-b" },
+      { "label": "Layout C", "value": "layout-c" }
+    ],
+    "editableGroups": ["Layout"]
+  },
+
+  "theme_mode": {
+    "type": "array",
+    "value": [
+      { "label": "Auto", "value": "auto", "selected": true },
+      { "label": "Light", "value": "light" },
+      { "label": "Dark", "value": "dark" }
+    ],
+    "editableGroups": ["Theme"]
+  },
+
+  "background_color": {
+    "type": "array",
+    "value": [
+      { "label": "White #FFFFFF", "value": "color-white", "selected": true },
+      { "label": "Black #000000", "value": "color-black" },
+      { "label": "Cosmos #1D2C3B", "value": "color-cosmos" },
+      { "label": "Dell Blue #0672CB", "value": "color-dell-blue" },
+      { "label": "Raven #40586D", "value": "color-raven" },
+      { "label": "Mist #C5D4E3", "value": "color-mist" },
+      { "label": "Quartz #F0F0F0", "value": "color-quartz" },
+      { "label": "Titanium #D2D2D2", "value": "color-titanium" },
+      { "label": "Steel #B6B6B6", "value": "color-steel" },
+      { "label": "Ocean #00468B", "value": "color-ocean" },
+      { "label": "Forest #0B7C84", "value": "color-forest" },
+      { "label": "Teal #044E52", "value": "color-teal" },
+      { "label": "Plum #66278F", "value": "color-plum" },
+      { "label": "Dust #40155C", "value": "color-dust" }
+    ],
+    "editableGroups": ["Theme"]
+  },
+
+  "brand_logo_primary": {
+    "type": "image",
+    "value": "images/noimage.png",
+    "editableGroups": ["Brand"]
+  },
+
+  "brand_logo_secondary": {
+    "type": "image",
+    "value": "images/noimage.png",
+    "editableGroups": ["Brand"]
+  },
+
+  "brand_logo_position": {
+    "type": "array",
+    "value": [
+      { "label": "Top Left", "value": "top-left", "selected": true },
+      { "label": "Top Center", "value": "top-center" },
+      { "label": "Top Right", "value": "top-right" },
+      { "label": "Center Left", "value": "center-left" },
+      { "label": "Center", "value": "center-center" },
+      { "label": "Center Right", "value": "center-right" },
+      { "label": "Bottom Left", "value": "bottom-left" },
+      { "label": "Bottom Center", "value": "bottom-center" },
+      { "label": "Bottom Right", "value": "bottom-right" }
+    ],
+    "editableGroups": ["Brand"]
+  },
+
+  "brand_logo_color": {
+    "type": "array",
+    "value": [
+      { "label": "Black #000000", "value": "color-black", "selected": true },
+      { "label": "White #FFFFFF", "value": "color-white" },
+      { "label": "Dell Blue #0672CB", "value": "color-dell-blue" },
+      { "label": "Cosmos #1D2C3B", "value": "color-cosmos" }
+    ],
+    "editableGroups": ["Brand"]
+  },
+
+  "brand_logo_width": {
+    "type": "text",
+    "value": "80",
+    "editableGroups": ["Brand"]
+  },
+
+  "brand_logo_visibility": {
+    "type": "array",
+    "value": [
+      { "label": "Show", "value": "show", "selected": true },
+      { "label": "Hide", "value": "hide" }
+    ],
+    "editableGroups": ["Brand"]
+  },
+
+  "sponsor_logo": {
+    "type": "image",
+    "value": "images/noimage.png",
+    "editableGroups": ["Brand"]
+  },
+
+  "sponsor_copy": {
+    "type": "textarea",
+    "value": "",
+    "editableGroups": ["Brand"]
+  },
+
+  "f1_bg_image": {
+    "type": "image",
+    "value": "images/noimage.png",
+    "editableGroups": ["Background"]
+  },
+
+  "f1_bg_overlay": {
+    "type": "image",
+    "value": "images/noimage.png",
+    "editableGroups": ["Background"]
+  },
+
+  "f2_bg_image": {
+    "type": "image",
+    "value": "images/noimage.png",
+    "editableGroups": ["Background"]
+  },
+
+  "f2_bg_overlay": {
+    "type": "image",
+    "value": "images/noimage.png",
+    "editableGroups": ["Background"]
+  },
+
+  "f3_bg_image": {
+    "type": "image",
+    "value": "images/noimage.png",
+    "editableGroups": ["Background"]
+  },
+
+  "f3_bg_overlay": {
+    "type": "image",
+    "value": "images/noimage.png",
+    "editableGroups": ["Background"]
+  },
+
+  "f4_bg_image": {
+    "type": "image",
+    "value": "images/noimage.png",
+    "editableGroups": ["Background"]
+  },
+
+  "f4_bg_overlay": {
+    "type": "image",
+    "value": "images/noimage.png",
+    "editableGroups": ["Background"]
+  },
+
+  "f5_bg_image": {
+    "type": "image",
+    "value": "images/noimage.png",
+    "editableGroups": ["Background"]
+  },
+
+  "f5_bg_overlay": {
+    "type": "image",
+    "value": "images/noimage.png",
+    "editableGroups": ["Background"]
+  },
+
+  "background_scale": {
+    "type": "array",
+    "value": [
+      { "label": "1.00", "value": "1.00", "selected": true },
+      { "label": "1.05", "value": "1.05" },
+      { "label": "1.10", "value": "1.10" },
+      { "label": "1.15", "value": "1.15" },
+      { "label": "1.20", "value": "1.20" },
+      { "label": "1.25", "value": "1.25" },
+      { "label": "1.50", "value": "1.50" },
+      { "label": "2.00", "value": "2.00" }
+    ],
+    "editableGroups": ["Background"]
+  },
+
+  "background_position": {
+    "type": "array",
+    "value": [
+      { "label": "Center", "value": "center-center", "selected": true },
+      { "label": "Top Left", "value": "top-left" },
+      { "label": "Top Center", "value": "top-center" },
+      { "label": "Top Right", "value": "top-right" },
+      { "label": "Center Left", "value": "center-left" },
+      { "label": "Center Right", "value": "center-right" },
+      { "label": "Bottom Left", "value": "bottom-left" },
+      { "label": "Bottom Center", "value": "bottom-center" },
+      { "label": "Bottom Right", "value": "bottom-right" }
+    ],
+    "editableGroups": ["Background"]
+  },
+
+  "f1_copy_campaign_badge": {
+    "type": "textarea",
+    "value": "",
+    "editableGroups": ["Message"]
+  },
+
+  "f1_copy_headline": {
+    "type": "textarea",
+    "value": "",
+    "editableGroups": ["Message"]
+  },
+
+  "f1_copy_subline": {
+    "type": "textarea",
+    "value": "",
+    "editableGroups": ["Message"]
+  },
+
+  "f1_extra": {
+    "type": "textarea",
+    "value": "",
+    "editableGroups": ["Message"]
+  },
+
+  "f2_copy_campaign_badge": {
+    "type": "textarea",
+    "value": "",
+    "editableGroups": ["Message"]
+  },
+
+  "f2_copy_headline": {
+    "type": "textarea",
+    "value": "",
+    "editableGroups": ["Message"]
+  },
+
+  "f2_copy_subline": {
+    "type": "textarea",
+    "value": "",
+    "editableGroups": ["Message"]
+  },
+
+  "f2_extra": {
+    "type": "textarea",
+    "value": "",
+    "editableGroups": ["Message"]
+  },
+
+  "f3_copy_campaign_badge": {
+    "type": "textarea",
+    "value": "",
+    "editableGroups": ["Message"]
+  },
+
+  "f3_copy_headline": {
+    "type": "textarea",
+    "value": "",
+    "editableGroups": ["Message"]
+  },
+
+  "f3_copy_subline": {
+    "type": "textarea",
+    "value": "",
+    "editableGroups": ["Message"]
+  },
+
+  "f3_extra": {
+    "type": "textarea",
+    "value": "",
+    "editableGroups": ["Message"]
+  },
+
+  "f4_copy_campaign_badge": {
+    "type": "textarea",
+    "value": "",
+    "editableGroups": ["Message"]
+  },
+
+  "f4_copy_headline": {
+    "type": "textarea",
+    "value": "",
+    "editableGroups": ["Message"]
+  },
+
+  "f4_copy_subline": {
+    "type": "textarea",
+    "value": "",
+    "editableGroups": ["Message"]
+  },
+
+  "f4_extra": {
+    "type": "textarea",
+    "value": "",
+    "editableGroups": ["Message"]
+  },
+
+  "f5_copy_campaign_badge": {
+    "type": "textarea",
+    "value": "",
+    "editableGroups": ["Message"]
+  },
+
+  "f5_copy_headline": {
+    "type": "textarea",
+    "value": "",
+    "editableGroups": ["Message"]
+  },
+
+  "f5_copy_subline": {
+    "type": "textarea",
+    "value": "",
+    "editableGroups": ["Message"]
+  },
+
+  "f5_extra": {
+    "type": "textarea",
+    "value": "",
+    "editableGroups": ["Message"]
+  },
+
+  "f1_copy_position": {
+    "type": "array",
+    "value": [
+      { "label": "Top Left", "value": "top-left", "selected": true },
+      { "label": "Top Center", "value": "top-center" },
+      { "label": "Top Right", "value": "top-right" },
+      { "label": "Center Left", "value": "center-left" },
+      { "label": "Center", "value": "center-center" },
+      { "label": "Center Right", "value": "center-right" },
+      { "label": "Bottom Left", "value": "bottom-left" },
+      { "label": "Bottom Center", "value": "bottom-center" },
+      { "label": "Bottom Right", "value": "bottom-right" }
+    ],
+    "editableGroups": ["Layout"]
+  },
+
+  "f2_copy_position": {
+    "type": "array",
+    "value": [
+      { "label": "Top Left", "value": "top-left", "selected": true },
+      { "label": "Top Center", "value": "top-center" },
+      { "label": "Top Right", "value": "top-right" },
+      { "label": "Center Left", "value": "center-left" },
+      { "label": "Center", "value": "center-center" },
+      { "label": "Center Right", "value": "center-right" },
+      { "label": "Bottom Left", "value": "bottom-left" },
+      { "label": "Bottom Center", "value": "bottom-center" },
+      { "label": "Bottom Right", "value": "bottom-right" }
+    ],
+    "editableGroups": ["Layout"]
+  },
+
+  "f3_copy_position": {
+    "type": "array",
+    "value": [
+      { "label": "Top Left", "value": "top-left", "selected": true },
+      { "label": "Top Center", "value": "top-center" },
+      { "label": "Top Right", "value": "top-right" },
+      { "label": "Center Left", "value": "center-left" },
+      { "label": "Center", "value": "center-center" },
+      { "label": "Center Right", "value": "center-right" },
+      { "label": "Bottom Left", "value": "bottom-left" },
+      { "label": "Bottom Center", "value": "bottom-center" },
+      { "label": "Bottom Right", "value": "bottom-right" }
+    ],
+    "editableGroups": ["Layout"]
+  },
+
+  "f4_copy_position": {
+    "type": "array",
+    "value": [
+      { "label": "Top Left", "value": "top-left", "selected": true },
+      { "label": "Top Center", "value": "top-center" },
+      { "label": "Top Right", "value": "top-right" },
+      { "label": "Center Left", "value": "center-left" },
+      { "label": "Center", "value": "center-center" },
+      { "label": "Center Right", "value": "center-right" },
+      { "label": "Bottom Left", "value": "bottom-left" },
+      { "label": "Bottom Center", "value": "bottom-center" },
+      { "label": "Bottom Right", "value": "bottom-right" }
+    ],
+    "editableGroups": ["Layout"]
+  },
+
+  "f5_copy_position": {
+    "type": "array",
+    "value": [
+      { "label": "Top Left", "value": "top-left", "selected": true },
+      { "label": "Top Center", "value": "top-center" },
+      { "label": "Top Right", "value": "top-right" },
+      { "label": "Center Left", "value": "center-left" },
+      { "label": "Center", "value": "center-center" },
+      { "label": "Center Right", "value": "center-right" },
+      { "label": "Bottom Left", "value": "bottom-left" },
+      { "label": "Bottom Center", "value": "bottom-center" },
+      { "label": "Bottom Right", "value": "bottom-right" }
+    ],
+    "editableGroups": ["Layout"]
+  },
+
+  "headline_color": {
+    "type": "array",
+    "value": [
+      { "label": "Auto", "value": "Auto", "selected": true },
+      { "label": "White #FFFFFF", "value": "color-white" },
+      { "label": "Black #000000", "value": "color-black" },
+      { "label": "Cosmos #1D2C3B", "value": "color-cosmos" },
+      { "label": "Dell Blue #0672CB", "value": "color-dell-blue" },
+      { "label": "Raven #40586D", "value": "color-raven" },
+      { "label": "Mist #C5D4E3", "value": "color-mist" },
+      { "label": "Quartz #F0F0F0", "value": "color-quartz" },
+      { "label": "Titanium #D2D2D2", "value": "color-titanium" },
+      { "label": "Steel #B6B6B6", "value": "color-steel" },
+      { "label": "Ocean #00468B", "value": "color-ocean" },
+      { "label": "Forest #0B7C84", "value": "color-forest" },
+      { "label": "Teal #044E52", "value": "color-teal" },
+      { "label": "Plum #66278F", "value": "color-plum" },
+      { "label": "Dust #40155C", "value": "color-dust" }
+    ],
+    "editableGroups": ["Message"]
+  },
+
+  "subline_color": {
+    "type": "array",
+    "value": [
+      { "label": "Auto", "value": "Auto", "selected": true },
+      { "label": "White #FFFFFF", "value": "color-white" },
+      { "label": "Black #000000", "value": "color-black" },
+      { "label": "Cosmos #1D2C3B", "value": "color-cosmos" },
+      { "label": "Dell Blue #0672CB", "value": "color-dell-blue" },
+      { "label": "Raven #40586D", "value": "color-raven" },
+      { "label": "Mist #C5D4E3", "value": "color-mist" },
+      { "label": "Quartz #F0F0F0", "value": "color-quartz" },
+      { "label": "Titanium #D2D2D2", "value": "color-titanium" },
+      { "label": "Steel #B6B6B6", "value": "color-steel" },
+      { "label": "Ocean #00468B", "value": "color-ocean" },
+      { "label": "Forest #0B7C84", "value": "color-forest" },
+      { "label": "Teal #044E52", "value": "color-teal" },
+      { "label": "Plum #66278F", "value": "color-plum" },
+      { "label": "Dust #40155C", "value": "color-dust" }
+    ],
+    "editableGroups": ["Message"]
+  },
+
+  "badge_color": {
+    "type": "array",
+    "value": [
+      { "label": "Auto", "value": "Auto", "selected": true },
+      { "label": "White #FFFFFF", "value": "color-white" },
+      { "label": "Black #000000", "value": "color-black" },
+      { "label": "Cosmos #1D2C3B", "value": "color-cosmos" },
+      { "label": "Dell Blue #0672CB", "value": "color-dell-blue" },
+      { "label": "Raven #40586D", "value": "color-raven" },
+      { "label": "Mist #C5D4E3", "value": "color-mist" },
+      { "label": "Quartz #F0F0F0", "value": "color-quartz" },
+      { "label": "Titanium #D2D2D2", "value": "color-titanium" },
+      { "label": "Steel #B6B6B6", "value": "color-steel" },
+      { "label": "Ocean #00468B", "value": "color-ocean" },
+      { "label": "Forest #0B7C84", "value": "color-forest" },
+      { "label": "Teal #044E52", "value": "color-teal" },
+      { "label": "Plum #66278F", "value": "color-plum" },
+      { "label": "Dust #40155C", "value": "color-dust" }
+    ],
+    "editableGroups": ["Message"]
+  },
+
+  "product_primary": {
+    "type": "image",
+    "value": "images/noimage.png",
+    "editableGroups": ["Product"]
+  },
+
+  "product_secondary": {
+    "type": "image",
+    "value": "images/noimage.png",
+    "editableGroups": ["Product"]
+  },
+
+  "product_tertiary": {
+    "type": "image",
+    "value": "images/noimage.png",
+    "editableGroups": ["Product"]
+  },
+
+  "product_position": {
+    "type": "array",
+    "value": [
+      { "label": "Bottom Right", "value": "bottom-right", "selected": true },
+      { "label": "Top Left", "value": "top-left" },
+      { "label": "Top Center", "value": "top-center" },
+      { "label": "Top Right", "value": "top-right" },
+      { "label": "Center Left", "value": "center-left" },
+      { "label": "Center", "value": "center-center" },
+      { "label": "Center Right", "value": "center-right" },
+      { "label": "Bottom Left", "value": "bottom-left" },
+      { "label": "Bottom Center", "value": "bottom-center" }
+    ],
+    "editableGroups": ["Product"]
+  },
+
+  "product_scale": {
+    "type": "array",
+    "value": [
+      { "label": "50%", "value": "0.50" },
+      { "label": "60%", "value": "0.60" },
+      { "label": "70%", "value": "0.70" },
+      { "label": "80%", "value": "0.80" },
+      { "label": "90%", "value": "0.90" },
+      { "label": "100%", "value": "1.00", "selected": true },
+      { "label": "110%", "value": "1.10" },
+      { "label": "120%", "value": "1.20" },
+      { "label": "130%", "value": "1.30" },
+      { "label": "150%", "value": "1.50" },
+      { "label": "200%", "value": "2.00" }
+    ],
+    "editableGroups": ["Product"]
+  },
+
+  "product_visibility": {
+    "type": "array",
+    "value": [
+      { "label": "Show", "value": "show", "selected": true },
+      { "label": "Hide", "value": "hide" }
+    ],
+    "editableGroups": ["Product"]
+  },
+
+  "product_name": {
+    "type": "textarea",
+    "value": "",
+    "editableGroups": ["Product"]
+  },
+
+  "cta": {
+    "type": "text",
+    "value": "Learn More",
+    "editableGroups": ["CTA"]
+  },
+
+  "cta_position": {
+    "type": "array",
+    "value": [
+      { "label": "Top Left", "value": "top-left", "selected": true },
+      { "label": "Top Center", "value": "top-center" },
+      { "label": "Top Right", "value": "top-right" },
+      { "label": "Center Left", "value": "center-left" },
+      { "label": "Center", "value": "center-center" },
+      { "label": "Center Right", "value": "center-right" },
+      { "label": "Bottom Left", "value": "bottom-left" },
+      { "label": "Bottom Center", "value": "bottom-center" },
+      { "label": "Bottom Right", "value": "bottom-right" }
+    ],
+    "editableGroups": ["CTA"]
+  },
+
+  "cta_visibility": {
+    "type": "array",
+    "value": [
+      { "label": "Show", "value": "show", "selected": true },
+      { "label": "Hide", "value": "hide" }
+    ],
+    "editableGroups": ["CTA"]
+  },
+
+  "cta_variant": {
+    "type": "array",
+    "value": [
+      { "label": "Solid", "value": "solid", "selected": true },
+      { "label": "Outline", "value": "outline" },
+      { "label": "Text Only", "value": "text-only" }
+    ],
+    "editableGroups": ["CTA"]
+  },
+
+  "cta_copy_color": {
+    "type": "array",
+    "value": [
+      { "label": "White #FFFFFF", "value": "color-white", "selected": true },
+      { "label": "Black #000000", "value": "color-black" },
+      { "label": "Dell Blue #0672CB", "value": "color-dell-blue" }
+    ],
+    "editableGroups": ["CTA"]
+  },
+
+  "cta_bg_color": {
+    "type": "array",
+    "value": [
+      { "label": "Dell Blue #0672CB", "value": "color-dell-blue", "selected": true },
+      { "label": "Black #000000", "value": "color-black" },
+      { "label": "White #FFFFFF", "value": "color-white" },
+      { "label": "Cosmos #1D2C3B", "value": "color-cosmos" }
+    ],
+    "editableGroups": ["CTA"]
+  },
+
+  "cta_radius": {
+    "type": "array",
+    "value": [
+      { "label": "Square", "value": "0", "selected": true },
+      { "label": "Small", "value": "4" },
+      { "label": "Medium", "value": "8" },
+      { "label": "Large", "value": "16" },
+      { "label": "Pill", "value": "999" }
+    ],
+    "editableGroups": ["CTA"]
+  },
+
+  "exit_url": {
+    "type": "text",
+    "value": "https://www.example.com",
+    "editableGroups": ["CTA"]
+  },
+
+  "panel_visibility": {
+    "type": "array",
+    "value": [
+      { "label": "Hide", "value": "hide", "selected": true },
+      { "label": "Show", "value": "show" }
+    ],
+    "editableGroups": ["Panel"]
+  },
+
+  "panel_position": {
+    "type": "array",
+    "value": [
+      { "label": "Left", "value": "left", "selected": true },
+      { "label": "Right", "value": "right" },
+      { "label": "Top", "value": "top" },
+      { "label": "Bottom", "value": "bottom" }
+    ],
+    "editableGroups": ["Panel"]
+  },
+
+  "panel_size": {
+    "type": "text",
+    "value": "0%",
+    "editableGroups": ["Panel"]
+  },
+
+  "panel_background": {
+    "type": "array",
+    "value": [
+      { "label": "White #FFFFFF", "value": "color-white", "selected": true },
+      { "label": "Black #000000", "value": "color-black" },
+      { "label": "Cosmos #1D2C3B", "value": "color-cosmos" },
+      { "label": "Dell Blue #0672CB", "value": "color-dell-blue" }
+    ],
+    "editableGroups": ["Panel"]
+  },
+
+  "legal_trigger_visibility": {
+    "type": "array",
+    "value": [
+      { "label": "Hide", "value": "hide", "selected": true },
+      { "label": "Show", "value": "show" }
+    ],
+    "editableGroups": ["Legal"]
+  },
+
+  "legal_trigger_copy": {
+    "type": "text",
+    "value": "Legal Text",
+    "editableGroups": ["Legal"]
+  },
+
+  "legal_copy": {
+    "type": "textarea",
+    "value": "",
+    "editableGroups": ["Legal"]
+  },
+
+  "legal_position": {
+    "type": "array",
+    "value": [
+      { "label": "Bottom Right", "value": "bottom-right", "selected": true },
+      { "label": "Bottom Left", "value": "bottom-left" },
+      { "label": "Top Right", "value": "top-right" },
+      { "label": "Top Left", "value": "top-left" }
+    ],
+    "editableGroups": ["Legal"]
+  },
+
+  "legal_close_copy": {
+    "type": "text",
+    "value": "Close",
+    "editableGroups": ["Legal"]
+  },
+
+  "tooltip_visibility": {
+    "type": "array",
+    "value": [
+      { "label": "Hide", "value": "hide", "selected": true },
+      { "label": "Show", "value": "show" }
+    ],
+    "editableGroups": ["Legal"]
+  },
+
+  "f1_copy_animation": {
+    "type": "array",
+    "value": [
+      { "label": "Fade", "value": "fade", "selected": true },
+      { "label": "Slide Left", "value": "slide-left" },
+      { "label": "Slide Right", "value": "slide-right" },
+      { "label": "Slide Top", "value": "slide-top" },
+      { "label": "Slide Bottom", "value": "slide-bottom" },
+      { "label": "None", "value": "none" }
+    ],
+    "editableGroups": ["Animation"]
+  },
+
+  "f2_copy_animation": {
+    "type": "array",
+    "value": [
+      { "label": "Fade", "value": "fade", "selected": true },
+      { "label": "Slide Left", "value": "slide-left" },
+      { "label": "Slide Right", "value": "slide-right" },
+      { "label": "Slide Top", "value": "slide-top" },
+      { "label": "Slide Bottom", "value": "slide-bottom" },
+      { "label": "None", "value": "none" }
+    ],
+    "editableGroups": ["Animation"]
+  },
+
+  "f3_copy_animation": {
+    "type": "array",
+    "value": [
+      { "label": "Fade", "value": "fade", "selected": true },
+      { "label": "Slide Left", "value": "slide-left" },
+      { "label": "Slide Right", "value": "slide-right" },
+      { "label": "Slide Top", "value": "slide-top" },
+      { "label": "Slide Bottom", "value": "slide-bottom" },
+      { "label": "None", "value": "none" }
+    ],
+    "editableGroups": ["Animation"]
+  },
+
+  "f4_copy_animation": {
+    "type": "array",
+    "value": [
+      { "label": "Fade", "value": "fade", "selected": true },
+      { "label": "Slide Left", "value": "slide-left" },
+      { "label": "Slide Right", "value": "slide-right" },
+      { "label": "Slide Top", "value": "slide-top" },
+      { "label": "Slide Bottom", "value": "slide-bottom" },
+      { "label": "None", "value": "none" }
+    ],
+    "editableGroups": ["Animation"]
+  },
+
+  "f5_copy_animation": {
+    "type": "array",
+    "value": [
+      { "label": "Fade", "value": "fade", "selected": true },
+      { "label": "Slide Left", "value": "slide-left" },
+      { "label": "Slide Right", "value": "slide-right" },
+      { "label": "Slide Top", "value": "slide-top" },
+      { "label": "Slide Bottom", "value": "slide-bottom" },
+      { "label": "None", "value": "none" }
+    ],
+    "editableGroups": ["Animation"]
+  },
+
+  "f1_bg_animation": {
+    "type": "array",
+    "value": [
+      { "label": "Static", "value": "static", "selected": true },
+      { "label": "Fade", "value": "fade" },
+      { "label": "Slide Left", "value": "slide-left" },
+      { "label": "Slide Right", "value": "slide-right" },
+      { "label": "Slide Top", "value": "slide-top" },
+      { "label": "Slide Bottom", "value": "slide-bottom" },
+      { "label": "Zoom", "value": "zoom" }
+    ],
+    "editableGroups": ["Animation"]
+  },
+
+  "f2_bg_animation": {
+    "type": "array",
+    "value": [
+      { "label": "Static", "value": "static", "selected": true },
+      { "label": "Fade", "value": "fade" },
+      { "label": "Slide Left", "value": "slide-left" },
+      { "label": "Slide Right", "value": "slide-right" },
+      { "label": "Slide Top", "value": "slide-top" },
+      { "label": "Slide Bottom", "value": "slide-bottom" },
+      { "label": "Zoom", "value": "zoom" }
+    ],
+    "editableGroups": ["Animation"]
+  },
+
+  "f3_bg_animation": {
+    "type": "array",
+    "value": [
+      { "label": "Static", "value": "static", "selected": true },
+      { "label": "Fade", "value": "fade" },
+      { "label": "Slide Left", "value": "slide-left" },
+      { "label": "Slide Right", "value": "slide-right" },
+      { "label": "Slide Top", "value": "slide-top" },
+      { "label": "Slide Bottom", "value": "slide-bottom" },
+      { "label": "Zoom", "value": "zoom" }
+    ],
+    "editableGroups": ["Animation"]
+  },
+
+  "f4_bg_animation": {
+    "type": "array",
+    "value": [
+      { "label": "Static", "value": "static", "selected": true },
+      { "label": "Fade", "value": "fade" },
+      { "label": "Slide Left", "value": "slide-left" },
+      { "label": "Slide Right", "value": "slide-right" },
+      { "label": "Slide Top", "value": "slide-top" },
+      { "label": "Slide Bottom", "value": "slide-bottom" },
+      { "label": "Zoom", "value": "zoom" }
+    ],
+    "editableGroups": ["Animation"]
+  },
+
+  "f5_bg_animation": {
+    "type": "array",
+    "value": [
+      { "label": "Static", "value": "static", "selected": true },
+      { "label": "Fade", "value": "fade" },
+      { "label": "Slide Left", "value": "slide-left" },
+      { "label": "Slide Right", "value": "slide-right" },
+      { "label": "Slide Top", "value": "slide-top" },
+      { "label": "Slide Bottom", "value": "slide-bottom" },
+      { "label": "Zoom", "value": "zoom" }
+    ],
+    "editableGroups": ["Animation"]
+  },
+
+  "fade_in_speed": {
+    "type": "array",
+    "value": [
+      { "label": "0.1 sec", "value": "0.1" },
+      { "label": "0.2 sec", "value": "0.2" },
+      { "label": "0.3 sec", "value": "0.3", "selected": true },
+      { "label": "0.5 sec", "value": "0.5" },
+      { "label": "0.7 sec", "value": "0.7" },
+      { "label": "1.0 sec", "value": "1.0" }
+    ],
+    "editableGroups": ["Animation"]
+  },
+
+  "fade_out_speed": {
+    "type": "array",
+    "value": [
+      { "label": "0.1 sec", "value": "0.1" },
+      { "label": "0.2 sec", "value": "0.2" },
+      { "label": "0.3 sec", "value": "0.3", "selected": true },
+      { "label": "0.5 sec", "value": "0.5" },
+      { "label": "0.7 sec", "value": "0.7" },
+      { "label": "1.0 sec", "value": "1.0" }
+    ],
+    "editableGroups": ["Animation"]
+  },
+
+  "frame_hold_time": {
+    "type": "text",
+    "value": "3,3,3,3",
+    "editableGroups": ["Animation"]
+  },
+
+  "animation_ease": {
+    "type": "array",
+    "value": [
+      { "label": "None", "value": "none", "selected": true },
+      { "label": "Power 1 Out", "value": "power1.out" },
+      { "label": "Power 2 Out", "value": "power2.out" },
+      { "label": "Power 3 Out", "value": "power3.out" },
+      { "label": "Back Out", "value": "back.out" }
+    ],
+    "editableGroups": ["Animation"]
+  },
+
+  "play_count": {
+    "type": "array",
+    "value": [
+      { "label": "1 Play", "value": "1", "selected": true },
+      { "label": "2 Plays", "value": "2" },
+      { "label": "3 Plays", "value": "3" }
+    ],
+    "editableGroups": ["Looping"]
+  },
+
+  "replay_visibility": {
+    "type": "array",
+    "value": [
+      { "label": "Show", "value": "show", "selected": true },
+      { "label": "Hide", "value": "hide" }
+    ],
+    "editableGroups": ["Looping"]
+  },
+
+  "repeat_delay": {
+    "type": "text",
+    "value": "2",
+    "editableGroups": ["Looping"]
+  },
+
+  "end_frame_static": {
+    "type": "array",
+    "value": [
+      { "label": "Enabled", "value": "enabled", "selected": true },
+      { "label": "Disabled", "value": "disabled" }
+    ],
+    "editableGroups": ["Looping"]
+  },
+
+  "replay_icon": {
+    "type": "image",
+    "value": "images/replay.svg",
+    "editableGroups": ["Looping"]
+  },
+
+  "funding_logo": {
+    "type": "image",
+    "value": "images/noimage.png",
+    "editableGroups": ["Funding"]
+  },
+
+  "funding_copy": {
+    "type": "textarea",
+    "value": "",
+    "editableGroups": ["Funding"]
+  },
+
+  "funding_visibility": {
+    "type": "array",
+    "value": [
+      { "label": "Hide", "value": "hide", "selected": true },
+      { "label": "Show", "value": "show" }
+    ],
+    "editableGroups": ["Funding"]
+  },
+
+  "funding_position": {
+    "type": "array",
+    "value": [
+      { "label": "Bottom Left", "value": "bottom-left", "selected": true },
+      { "label": "Bottom Center", "value": "bottom-center" },
+      { "label": "Bottom Right", "value": "bottom-right" },
+      { "label": "Top Left", "value": "top-left" },
+      { "label": "Top Right", "value": "top-right" }
+    ],
+    "editableGroups": ["Funding"]
+  },
+
+  "funding_logo_width": {
+    "type": "text",
+    "value": "50",
+    "editableGroups": ["Funding"]
+  },
+
+  "funding_copy_color": {
+    "type": "array",
+    "value": [
+      { "label": "White #FFFFFF", "value": "color-white", "selected": true },
+      { "label": "Black #000000", "value": "color-black" },
+      { "label": "Dell Blue #0672CB", "value": "color-dell-blue" },
+      { "label": "Cosmos #1D2C3B", "value": "color-cosmos" },
+      { "label": "Raven #40586D", "value": "color-raven" }
+    ],
+    "editableGroups": ["Funding"]
+  },
+
+  "creative_css": {
+    "type": "css",
+    "value": "",
+    "editableGroups": ["Creative"]
+  },
+
+  "brand_css": {
+    "type": "css",
+    "value": "",
+    "editableGroups": ["Brand"]
+  },
+
+  "message_css": {
+    "type": "css",
+    "value": "",
+    "editableGroups": ["Message"]
+  },
+
+  "panel_css": {
+    "type": "css",
+    "value": "",
+    "editableGroups": ["Panel"]
+  },
+
+  "cta_css": {
+    "type": "css",
+    "value": "",
+    "editableGroups": ["CTA"]
+  },
+
+  "legal_css": {
+    "type": "css",
+    "value": "",
+    "editableGroups": ["Legal"]
+  },
+
+  "custom_css": {
+    "type": "css",
+    "value": "",
+    "editableGroups": ["Advanced"]
+  },
+
+  "debug_mode": {
+    "type": "array",
+    "value": [
+      { "label": "Disabled", "value": "disabled", "selected": true },
+      { "label": "Enabled", "value": "enabled" }
+    ],
+    "editableGroups": ["Advanced"]
+  },
+
+  "safe_area": {
+    "type": "array",
+    "value": [
+      { "label": "14px", "value": "14", "selected": true },
+      { "label": "18px", "value": "18" },
+      { "label": "20px", "value": "20" },
+      { "label": "24px", "value": "24" }
+    ],
+    "editableGroups": ["Advanced"]
+  }
+}

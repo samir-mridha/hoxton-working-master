@@ -1,0 +1,1958 @@
+```css
+@charset "UTF-8";
+
+/* =========================================================
+   HOXTON MASTER BOILERPLATE
+   styles.css
+   ---------------------------------------------------------
+   Purpose:
+   - Generic reusable banner foundation
+   - Dell brand palette as default theme
+   - Position-first architecture
+   - Hoxton dynamic-ready CSS variables
+   - Minimum content spacing: 14px
+   - Responsive-safe sizing
+========================================================= */
+
+
+/* =========================================================
+   01. GLOBAL RESET
+========================================================= */
+
+html {
+    text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    overflow: hidden;
+
+    background: var(--color-background);
+
+    font-family: var(--font-family-primary);
+    font-weight: var(--font-weight-regular);
+
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    -webkit-text-size-adjust: none;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+img,
+svg {
+    display: block;
+}
+
+img {
+    max-width: 100%;
+}
+
+sup {
+    font-size: 0.65em;
+    line-height: 0;
+}
+
+
+/* =========================================================
+   02. DESIGN TOKENS
+   ---------------------------------------------------------
+   These are the main values that Hoxton / JS can change.
+========================================================= */
+
+:root {
+
+    /* -----------------------------------------------------
+       GLOBAL
+    ----------------------------------------------------- */
+
+    --scale: 1;
+
+    --banner-width: 300px;
+    --banner-height: 250px;
+
+    --content-margin: 14px;
+    --content-padding: 14px;
+
+    --z-background: 1;
+    --z-panel: 10;
+    --z-frame: 20;
+    --z-brand: 30;
+    --z-funding: 40;
+    --z-cta: 50;
+    --z-legal: 60;
+    --z-ui: 100;
+    --z-exit: 400;
+
+
+    /* -----------------------------------------------------
+       DELL BRAND PALETTE
+       Default values remain Dell-oriented.
+    ----------------------------------------------------- */
+
+    --color-white: #ffffff;
+    --color-black: #000000;
+
+    --color-cosmos: #1d2c3b;
+    --color-dell-blue: #0672cb;
+    --color-raven: #40586d;
+    --color-mist: #c5d4e3;
+    --color-quartz: #f0f0f0;
+    --color-titanium: #d2d2d2;
+    --color-steel: #b6b6b6;
+
+    --color-ocean: #00468b;
+    --color-forest: #0b7c84;
+    --color-teal: #044e52;
+    --color-plum: #66278f;
+    --color-dust: #40155c;
+
+
+    /* -----------------------------------------------------
+       GLOBAL THEME
+    ----------------------------------------------------- */
+
+    --color-background: var(--color-white);
+    --color-surface: var(--color-white);
+    --color-border: var(--color-steel);
+
+    --color-primary: var(--color-dell-blue);
+    --color-secondary: var(--color-cosmos);
+    --color-accent: var(--color-dell-blue);
+
+    --color-text: var(--color-black);
+    --color-text-inverse: var(--color-white);
+
+    --color-headline: var(--color-black);
+    --color-subline: var(--color-black);
+    --color-badge: var(--color-black);
+    --color-body: var(--color-black);
+
+    --color-product-name: var(--color-black);
+
+    --color-cta-background: var(--color-dell-blue);
+    --color-cta-text: var(--color-white);
+    --color-cta-border: var(--color-dell-blue);
+
+    --color-panel-background: var(--color-white);
+    --color-panel-text: var(--color-black);
+
+    --color-legal: var(--color-black);
+    --color-legal-background: var(--color-white);
+
+    --color-tooltip-background: var(--color-cosmos);
+    --color-tooltip-text: var(--color-white);
+
+    --color-brand-logo: var(--color-black);
+
+
+    /* -----------------------------------------------------
+       TYPOGRAPHY
+    ----------------------------------------------------- */
+
+    --font-family-primary:
+        "Roboto",
+        "Helvetica Neue",
+        Helvetica,
+        Arial,
+        sans-serif;
+
+    --font-family-secondary:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    --font-weight-light: 300;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-bold: 700;
+
+
+    /* -----------------------------------------------------
+       DEFAULT FONT SIZES
+    ----------------------------------------------------- */
+
+    --font-size-eyebrow: 10px;
+    --font-size-headline: 20px;
+    --font-size-subline: 13px;
+    --font-size-body: 12px;
+
+    --font-size-product: 12px;
+
+    --font-size-cta: 12px;
+
+    --font-size-funding: 11px;
+
+    --font-size-legal-trigger: 9px;
+    --font-size-legal: 9px;
+
+    --font-size-replay: 10px;
+
+
+    /* -----------------------------------------------------
+       TYPOGRAPHY LINE HEIGHT
+    ----------------------------------------------------- */
+
+    --line-height-eyebrow: 1.1;
+    --line-height-headline: 1.12;
+    --line-height-subline: 1.15;
+    --line-height-body: 1.2;
+    --line-height-product: 1.15;
+    --line-height-cta: 1;
+    --line-height-legal: 1.2;
+
+
+    /* -----------------------------------------------------
+       LETTER SPACING
+    ----------------------------------------------------- */
+
+    --letter-spacing-eyebrow: 0;
+    --letter-spacing-headline: 0;
+    --letter-spacing-subline: 0;
+    --letter-spacing-body: 0;
+    --letter-spacing-cta: 0;
+
+
+    /* -----------------------------------------------------
+       GLOBAL POSITION VARIABLES
+       Default = TOP LEFT
+    ----------------------------------------------------- */
+
+    --global-top: 14px;
+    --global-right: 14px;
+    --global-bottom: 14px;
+    --global-left: 14px;
+
+
+    /* -----------------------------------------------------
+       BRAND POSITION
+       Default = TOP LEFT
+    ----------------------------------------------------- */
+
+    --brand-top: 14px;
+    --brand-right: 14px;
+    --brand-bottom: auto;
+    --brand-left: 14px;
+
+    --brand-logo-width: 80px;
+    --brand-logo-height: auto;
+
+    --brand-logo-secondary-width: 60px;
+
+
+    /* -----------------------------------------------------
+       BACKGROUND
+    ----------------------------------------------------- */
+
+    --background-opacity: 1;
+    --background-scale: 1;
+    --background-x: 0px;
+    --background-y: 0px;
+
+
+    /* -----------------------------------------------------
+       FRAME
+    ----------------------------------------------------- */
+
+    --frame-top: 0;
+    --frame-right: 0;
+    --frame-bottom: 0;
+    --frame-left: 0;
+
+    --frame-width: 100%;
+    --frame-height: 100%;
+
+
+    /* -----------------------------------------------------
+       COPY CONTAINER
+       Default = TOP LEFT
+    ----------------------------------------------------- */
+
+    --copy-top: 14px;
+    --copy-right: 14px;
+    --copy-bottom: auto;
+    --copy-left: 14px;
+
+    --copy-width: auto;
+    --copy-max-width: calc(100% - 28px);
+
+    --copy-gap: 5px;
+
+    --copy-transform-x: 0px;
+    --copy-transform-y: 0px;
+
+
+    /* -----------------------------------------------------
+       BADGE
+    ----------------------------------------------------- */
+
+    --badge-margin-bottom: 2px;
+    --badge-padding-top: 0;
+    --badge-padding-right: 0;
+    --badge-padding-bottom: 0;
+    --badge-padding-left: 0;
+
+
+    /* -----------------------------------------------------
+       HEADLINE
+    ----------------------------------------------------- */
+
+    --headline-max-width: 240px;
+
+
+    /* -----------------------------------------------------
+       SUBLINE
+    ----------------------------------------------------- */
+
+    --subline-max-width: 240px;
+
+
+    /* -----------------------------------------------------
+       PRODUCT
+    ----------------------------------------------------- */
+
+    --product-top: auto;
+    --product-right: 14px;
+    --product-bottom: 14px;
+    --product-left: auto;
+
+    --product-width: 150px;
+    --product-height: auto;
+
+    --product-transform-x: 0px;
+    --product-transform-y: 0px;
+    --product-scale: 1;
+
+
+    /* -----------------------------------------------------
+       PRODUCT NAME
+    ----------------------------------------------------- */
+
+    --product-name-top: auto;
+    --product-name-right: 14px;
+    --product-name-bottom: 14px;
+    --product-name-left: auto;
+
+    --product-name-max-width: 160px;
+
+
+    /* -----------------------------------------------------
+       AI / BADGE IMAGE
+    ----------------------------------------------------- */
+
+    --badge-image-top: 8px;
+    --badge-image-right: 8px;
+
+    --badge-image-width: 18px;
+
+
+    /* -----------------------------------------------------
+       FUNDING
+    ----------------------------------------------------- */
+
+    --funding-top: auto;
+    --funding-right: 14px;
+    --funding-bottom: 14px;
+    --funding-left: 14px;
+
+    --funding-logo-width: 50px;
+
+    --funding-gap: 5px;
+
+    --funding-max-width: 140px;
+
+
+    /* -----------------------------------------------------
+       CTA
+       Default = TOP LEFT
+       -----------------------------------------------------
+       This is intentional.
+       Layout can be moved dynamically later.
+    ----------------------------------------------------- */
+
+    --cta-top: 14px;
+    --cta-right: auto;
+    --cta-bottom: auto;
+    --cta-left: 14px;
+
+    --cta-padding-top: 8px;
+    --cta-padding-right: 14px;
+    --cta-padding-bottom: 8px;
+    --cta-padding-left: 14px;
+
+    --cta-min-width: 0;
+    --cta-min-height: 30px;
+
+    --cta-border-width: 1px;
+    --cta-border-radius: 0;
+
+    --cta-margin-top: 0;
+    --cta-margin-right: 0;
+    --cta-margin-bottom: 0;
+    --cta-margin-left: 0;
+
+
+    /* -----------------------------------------------------
+       PANEL
+    ----------------------------------------------------- */
+
+    --panel-top: auto;
+    --panel-right: auto;
+    --panel-bottom: auto;
+    --panel-left: auto;
+
+    --panel-width: 0%;
+    --panel-height: 100%;
+
+    --panel-padding: 14px;
+
+    --panel-opacity: 1;
+
+
+    /* -----------------------------------------------------
+       LEGAL
+    ----------------------------------------------------- */
+
+    --legal-trigger-top: auto;
+    --legal-trigger-right: 14px;
+    --legal-trigger-bottom: 14px;
+    --legal-trigger-left: auto;
+
+    --legal-trigger-padding: 4px;
+
+    --legal-top: 0;
+    --legal-right: 0;
+    --legal-bottom: 0;
+    --legal-left: 0;
+
+    --legal-padding: 14px;
+
+
+    /* -----------------------------------------------------
+       TOOLTIP
+    ----------------------------------------------------- */
+
+    --tooltip-top: auto;
+    --tooltip-right: 14px;
+    --tooltip-bottom: 14px;
+    --tooltip-left: 14px;
+
+    --tooltip-padding: 10px;
+
+    --tooltip-width: calc(100% - 28px);
+
+    --tooltip-border-width: 0;
+    --tooltip-border-radius: 0;
+
+
+    /* -----------------------------------------------------
+       REPLAY
+    ----------------------------------------------------- */
+
+    --replay-top: 2px;
+    --replay-right: auto;
+    --replay-bottom: auto;
+    --replay-left: 2px;
+
+    --replay-width: 16px;
+    --replay-height: 18px;
+
+
+    /* -----------------------------------------------------
+       KEYLINE
+    ----------------------------------------------------- */
+
+    --keyline-width: 1px;
+    --keyline-color: var(--color-steel);
+
+
+    /* -----------------------------------------------------
+       ANIMATION DEFAULTS
+    ----------------------------------------------------- */
+
+    --transition-duration: 0.3s;
+    --transition-ease: ease;
+
+}
+
+
+/* =========================================================
+   03. MASTER HELPERS
+========================================================= */
+
+.abs {
+    position: absolute;
+}
+
+.full {
+    width: 100%;
+    height: 100%;
+}
+
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.no-pointer {
+    pointer-events: none;
+}
+
+.pointer {
+    pointer-events: auto;
+}
+
+
+/* =========================================================
+   04. CONTAINER
+========================================================= */
+
+#container {
+    position: absolute;
+
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    background: var(--color-background);
+
+    display: none;
+    opacity: 0;
+
+    isolation: isolate;
+}
+
+
+/* =========================================================
+   05. CORE LAYERS
+========================================================= */
+
+#background {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: var(--z-background);
+
+    width: 100%;
+    height: 100%;
+
+    background: var(--color-background);
+
+    opacity: var(--background-opacity);
+
+    overflow: hidden;
+}
+
+#keyline {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: calc(var(--z-exit) - 1);
+
+    border: var(--keyline-width) solid var(--keyline-color);
+
+    pointer-events: none;
+}
+
+#exit_btn {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: var(--z-exit);
+
+    cursor: pointer;
+
+    background: transparent;
+
+    opacity: 0;
+}
+
+
+/* =========================================================
+   06. BACKGROUND LAYER
+========================================================= */
+
+#bg_container {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: var(--z-background);
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+}
+
+.frame-bg,
+.frame-overlay {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transform-origin: center center;
+
+    will-change: transform, opacity;
+}
+
+.frame-bg {
+    transform:
+        translate3d(
+            var(--background-x),
+            var(--background-y),
+            0
+        )
+        scale(var(--background-scale));
+}
+
+.frame-overlay {
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   07. FRAME CONTAINER
+========================================================= */
+
+#frame_container {
+    position: absolute;
+
+    top: var(--frame-top);
+    right: var(--frame-right);
+    bottom: var(--frame-bottom);
+    left: var(--frame-left);
+
+    width: var(--frame-width);
+    height: var(--frame-height);
+
+    z-index: var(--z-frame);
+
+    overflow: visible;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   08. GENERIC FRAME
+========================================================= */
+
+.frame {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: visible;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   09. COPY CONTAINERS
+   ---------------------------------------------------------
+   DEFAULT = TOP LEFT
+========================================================= */
+
+.copy-container {
+    position: absolute;
+
+    top: var(--copy-top);
+    right: var(--copy-right);
+    bottom: var(--copy-bottom);
+    left: var(--copy-left);
+
+    width: var(--copy-width);
+    max-width: var(--copy-max-width);
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    gap: var(--copy-gap);
+
+    text-align: left;
+
+    transform:
+        translate3d(
+            var(--copy-transform-x),
+            var(--copy-transform-y),
+            0
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   10. COPY POSITION UTILITIES
+   ---------------------------------------------------------
+   These classes are designed for Hoxton-driven switching.
+========================================================= */
+
+.copy-top-left {
+    top: var(--global-top);
+    right: auto;
+    bottom: auto;
+    left: var(--global-left);
+
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.copy-top-center {
+    top: var(--global-top);
+    right: auto;
+    bottom: auto;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+}
+
+.copy-top-right {
+    top: var(--global-top);
+    right: var(--global-right);
+    bottom: auto;
+    left: auto;
+
+    justify-content: flex-start;
+    align-items: flex-end;
+    text-align: right;
+}
+
+.copy-center-left {
+    top: 50%;
+    right: auto;
+    bottom: auto;
+    left: var(--global-left);
+
+    transform: translateY(-50%);
+
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.copy-center-center {
+    top: 50%;
+    right: auto;
+    bottom: auto;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.copy-center-right {
+    top: 50%;
+    right: var(--global-right);
+    bottom: auto;
+    left: auto;
+
+    transform: translateY(-50%);
+
+    justify-content: center;
+    align-items: flex-end;
+    text-align: right;
+}
+
+.copy-bottom-left {
+    top: auto;
+    right: auto;
+    bottom: var(--global-bottom);
+    left: var(--global-left);
+
+    justify-content: flex-end;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.copy-bottom-center {
+    top: auto;
+    right: auto;
+    bottom: var(--global-bottom);
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+}
+
+.copy-bottom-right {
+    top: auto;
+    right: var(--global-right);
+    bottom: var(--global-bottom);
+    left: auto;
+
+    justify-content: flex-end;
+    align-items: flex-end;
+    text-align: right;
+}
+
+
+/* =========================================================
+   11. EYEBROW / CAMPAIGN BADGE
+========================================================= */
+
+.copy-campaign-badge {
+    margin: 0 0 var(--badge-margin-bottom) 0;
+
+    padding:
+        var(--badge-padding-top)
+        var(--badge-padding-right)
+        var(--badge-padding-bottom)
+        var(--badge-padding-left);
+
+    font-size:
+        calc(var(--font-size-eyebrow) * var(--scale));
+
+    line-height: var(--line-height-eyebrow);
+
+    font-weight: var(--font-weight-medium);
+
+    letter-spacing: var(--letter-spacing-eyebrow);
+
+    color: var(--color-badge);
+
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   12. HEADLINE
+========================================================= */
+
+.copy-headline {
+    max-width: var(--headline-max-width);
+
+    font-size:
+        calc(var(--font-size-headline) * var(--scale));
+
+    line-height: var(--line-height-headline);
+
+    font-weight: var(--font-weight-light);
+
+    letter-spacing: var(--letter-spacing-headline);
+
+    color: var(--color-headline);
+
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   13. SUBLINE
+========================================================= */
+
+.copy-subline {
+    max-width: var(--subline-max-width);
+
+    font-size:
+        calc(var(--font-size-subline) * var(--scale));
+
+    line-height: var(--line-height-subline);
+
+    font-weight: var(--font-weight-regular);
+
+    letter-spacing: var(--letter-spacing-subline);
+
+    color: var(--color-subline);
+
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   14. EXTRA / BODY COPY
+========================================================= */
+
+.copy-extra {
+    max-width: 100%;
+
+    font-size:
+        calc(var(--font-size-body) * var(--scale));
+
+    line-height: var(--line-height-body);
+
+    font-weight: var(--font-weight-regular);
+
+    letter-spacing: var(--letter-spacing-body);
+
+    color: var(--color-body);
+}
+
+
+/* =========================================================
+   15. BADGE IMAGE
+========================================================= */
+
+.badge-image {
+    position: absolute;
+
+    top: var(--badge-image-top);
+    right: var(--badge-image-right);
+
+    width:
+        calc(var(--badge-image-width) * var(--scale));
+
+    height: auto;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   16. PRODUCT IMAGE
+========================================================= */
+
+.product-image {
+    position: absolute;
+
+    top: var(--product-top);
+    right: var(--product-right);
+    bottom: var(--product-bottom);
+    left: var(--product-left);
+
+    width:
+        calc(var(--product-width) * var(--scale));
+
+    height: var(--product-height);
+
+    max-width: none;
+
+    object-fit: contain;
+
+    transform:
+        translate3d(
+            var(--product-transform-x),
+            var(--product-transform-y),
+            0
+        )
+        scale(var(--product-scale));
+
+    transform-origin: center center;
+
+    will-change: transform, opacity;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   17. PRODUCT NAME
+========================================================= */
+
+.product-name {
+    position: absolute;
+
+    top: var(--product-name-top);
+    right: var(--product-name-right);
+    bottom: var(--product-name-bottom);
+    left: var(--product-name-left);
+
+    max-width: var(--product-name-max-width);
+
+    font-size:
+        calc(var(--font-size-product) * var(--scale));
+
+    line-height: var(--line-height-product);
+
+    font-weight: var(--font-weight-regular);
+
+    color: var(--color-product-name);
+
+    text-align: left;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   18. BRAND LAYER
+========================================================= */
+
+#brand_layer {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: var(--z-brand);
+
+    pointer-events: none;
+}
+
+#brand_logo_container {
+    position: absolute;
+
+    top: var(--brand-top);
+    right: var(--brand-right);
+    bottom: var(--brand-bottom);
+    left: var(--brand-left);
+
+    display: flex;
+
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    gap: 8px;
+
+    pointer-events: none;
+}
+
+.brand-logo {
+    width:
+        calc(var(--brand-logo-width) * var(--scale));
+
+    height: var(--brand-logo-height);
+
+    max-width: none;
+
+    color: var(--color-brand-logo);
+
+    object-fit: contain;
+}
+
+.brand-logo-secondary {
+    width:
+        calc(var(--brand-logo-secondary-width) * var(--scale));
+
+    height: auto;
+
+    max-width: none;
+
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   19. BRAND POSITION UTILITIES
+========================================================= */
+
+.brand-top-left {
+    top: var(--global-top);
+    right: auto;
+    bottom: auto;
+    left: var(--global-left);
+}
+
+.brand-top-center {
+    top: var(--global-top);
+    right: auto;
+    bottom: auto;
+    left: 50%;
+
+    transform: translateX(-50%);
+}
+
+.brand-top-right {
+    top: var(--global-top);
+    right: var(--global-right);
+    bottom: auto;
+    left: auto;
+}
+
+.brand-center-left {
+    top: 50%;
+    right: auto;
+    bottom: auto;
+    left: var(--global-left);
+
+    transform: translateY(-50%);
+}
+
+.brand-center-center {
+    top: 50%;
+    right: auto;
+    bottom: auto;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+.brand-center-right {
+    top: 50%;
+    right: var(--global-right);
+    bottom: auto;
+    left: auto;
+
+    transform: translateY(-50%);
+}
+
+.brand-bottom-left {
+    top: auto;
+    right: auto;
+    bottom: var(--global-bottom);
+    left: var(--global-left);
+}
+
+.brand-bottom-center {
+    top: auto;
+    right: auto;
+    bottom: var(--global-bottom);
+    left: 50%;
+
+    transform: translateX(-50%);
+}
+
+.brand-bottom-right {
+    top: auto;
+    right: var(--global-right);
+    bottom: var(--global-bottom);
+    left: auto;
+}
+
+
+/* =========================================================
+   20. FUNDING
+========================================================= */
+
+#funding_container {
+    position: absolute;
+
+    top: var(--funding-top);
+    right: var(--funding-right);
+    bottom: var(--funding-bottom);
+    left: var(--funding-left);
+
+    z-index: var(--z-funding);
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: var(--funding-gap);
+
+    max-width: var(--funding-max-width);
+
+    pointer-events: none;
+}
+
+.funding-logo {
+    width:
+        calc(var(--funding-logo-width) * var(--scale));
+
+    height: auto;
+
+    max-width: none;
+
+    object-fit: contain;
+}
+
+.funding-copy {
+    max-width: 100%;
+
+    font-size:
+        calc(var(--font-size-funding) * var(--scale));
+
+    line-height: 1.1;
+
+    color: var(--color-funding);
+
+    text-align: left;
+}
+
+
+/* =========================================================
+   21. CTA
+   ---------------------------------------------------------
+   Default = TOP LEFT
+========================================================= */
+
+#cta_layer {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: var(--z-cta);
+
+    pointer-events: none;
+}
+
+#cta_container {
+    position: absolute;
+
+    top: var(--cta-top);
+    right: var(--cta-right);
+    bottom: var(--cta-bottom);
+    left: var(--cta-left);
+
+    display: flex;
+
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    margin:
+        var(--cta-margin-top)
+        var(--cta-margin-right)
+        var(--cta-margin-bottom)
+        var(--cta-margin-left);
+
+    pointer-events: auto;
+}
+
+
+/* =========================================================
+   22. CTA POSITION UTILITIES
+========================================================= */
+
+.cta-top-left {
+    top: var(--global-top) !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: var(--global-left) !important;
+
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+}
+
+.cta-top-center {
+    top: var(--global-top) !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: 50% !important;
+
+    transform: translateX(-50%);
+
+    justify-content: center !important;
+    align-items: flex-start !important;
+}
+
+.cta-top-right {
+    top: var(--global-top) !important;
+    right: var(--global-right) !important;
+    bottom: auto !important;
+    left: auto !important;
+
+    justify-content: flex-end !important;
+    align-items: flex-start !important;
+}
+
+.cta-center-left {
+    top: 50% !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: var(--global-left) !important;
+
+    transform: translateY(-50%);
+
+    justify-content: flex-start !important;
+    align-items: center !important;
+}
+
+.cta-center-center {
+    top: 50% !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: 50% !important;
+
+    transform: translate(-50%, -50%);
+
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.cta-center-right {
+    top: 50% !important;
+    right: var(--global-right) !important;
+    bottom: auto !important;
+    left: auto !important;
+
+    transform: translateY(-50%);
+
+    justify-content: flex-end !important;
+    align-items: center !important;
+}
+
+.cta-bottom-left {
+    top: auto !important;
+    right: auto !important;
+    bottom: var(--global-bottom) !important;
+    left: var(--global-left) !important;
+
+    justify-content: flex-start !important;
+    align-items: flex-end !important;
+}
+
+.cta-bottom-center {
+    top: auto !important;
+    right: auto !important;
+    bottom: var(--global-bottom) !important;
+    left: 50% !important;
+
+    transform: translateX(-50%);
+
+    justify-content: center !important;
+    align-items: flex-end !important;
+}
+
+.cta-bottom-right {
+    top: auto !important;
+    right: var(--global-right) !important;
+    bottom: var(--global-bottom) !important;
+    left: auto !important;
+
+    justify-content: flex-end !important;
+    align-items: flex-end !important;
+}
+
+
+/* =========================================================
+   23. CTA BUTTON
+========================================================= */
+
+.cta {
+    min-width: var(--cta-min-width);
+    min-height: var(--cta-min-height);
+
+    padding:
+        var(--cta-padding-top)
+        var(--cta-padding-right)
+        var(--cta-padding-bottom)
+        var(--cta-padding-left);
+
+    border:
+        var(--cta-border-width)
+        solid
+        var(--color-cta-border);
+
+    border-radius: var(--cta-border-radius);
+
+    background: var(--color-cta-background);
+
+    color: var(--color-cta-text);
+
+    font-size:
+        calc(var(--font-size-cta) * var(--scale));
+
+    line-height: var(--line-height-cta);
+
+    font-weight: var(--font-weight-medium);
+
+    letter-spacing: var(--letter-spacing-cta);
+
+    text-align: center;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    white-space: nowrap;
+
+    transition:
+        background-color var(--transition-duration) var(--transition-ease),
+        color var(--transition-duration) var(--transition-ease),
+        border-color var(--transition-duration) var(--transition-ease),
+        transform var(--transition-duration) var(--transition-ease);
+
+    cursor: pointer;
+}
+
+
+/* CTA variants */
+
+.cta-solid {
+    background: var(--color-cta-background);
+    color: var(--color-cta-text);
+}
+
+.cta-outline {
+    background: transparent;
+    color: var(--color-cta-background);
+    border-color: var(--color-cta-background);
+}
+
+.cta-text-only {
+    background: transparent;
+    color: var(--color-cta-background);
+    border-color: transparent;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+
+/* =========================================================
+   24. LEGAL LAYER
+========================================================= */
+
+#legal_layer {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: var(--z-legal);
+
+    pointer-events: none;
+}
+
+#legal_trigger_container {
+    position: absolute;
+
+    top: var(--legal-trigger-top);
+    right: var(--legal-trigger-right);
+    bottom: var(--legal-trigger-bottom);
+    left: var(--legal-trigger-left);
+
+    pointer-events: auto;
+}
+
+.legal-trigger-copy {
+    display: inline-block;
+
+    padding: var(--legal-trigger-padding);
+
+    font-size:
+        calc(var(--font-size-legal-trigger) * var(--scale));
+
+    line-height: 1;
+
+    color: var(--color-legal);
+
+    cursor: pointer;
+
+    user-select: none;
+}
+
+
+/* =========================================================
+   25. TOOLTIP
+========================================================= */
+
+#tooltip {
+    position: absolute;
+
+    top: var(--tooltip-top);
+    right: var(--tooltip-right);
+    bottom: var(--tooltip-bottom);
+    left: var(--tooltip-left);
+
+    width: var(--tooltip-width);
+
+    padding: var(--tooltip-padding);
+
+    border:
+        var(--tooltip-border-width)
+        solid
+        var(--color-tooltip-background);
+
+    border-radius: var(--tooltip-border-radius);
+
+    background: var(--color-tooltip-background);
+
+    color: var(--color-tooltip-text);
+
+    pointer-events: auto;
+}
+
+.tooltip-content {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+}
+
+.legal-copy {
+    font-size:
+        calc(var(--font-size-legal) * var(--scale));
+
+    line-height: var(--line-height-legal);
+
+    color: var(--color-tooltip-text);
+}
+
+.legal-close {
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    font-size:
+        calc(var(--font-size-legal) * var(--scale));
+
+    color: var(--color-tooltip-text);
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   26. REPLAY
+========================================================= */
+
+#btn_replay_container {
+    position: absolute;
+
+    top: var(--replay-top);
+    right: var(--replay-right);
+    bottom: var(--replay-bottom);
+    left: var(--replay-left);
+
+    z-index: var(--z-ui);
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    pointer-events: auto;
+}
+
+.btn-replay {
+    width:
+        calc(var(--replay-width) * var(--scale));
+
+    height:
+        calc(var(--replay-height) * var(--scale));
+
+    cursor: pointer;
+
+    object-fit: contain;
+
+    transform-origin: center center;
+}
+
+.btn-replay:hover {
+    transform: rotate(-360deg);
+    transition: transform 0.4s ease;
+}
+
+
+/* =========================================================
+   27. PANEL
+========================================================= */
+
+.panel {
+    position: absolute;
+
+    top: var(--panel-top);
+    right: var(--panel-right);
+    bottom: var(--panel-bottom);
+    left: var(--panel-left);
+
+    width: var(--panel-width);
+    height: var(--panel-height);
+
+    z-index: var(--z-panel);
+
+    padding: var(--panel-padding);
+
+    opacity: var(--panel-opacity);
+
+    background: var(--color-panel-background);
+
+    color: var(--color-panel-text);
+
+    pointer-events: none;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   28. PANEL POSITION UTILITIES
+========================================================= */
+
+.panel-left {
+    top: 0;
+    left: 0;
+    right: auto;
+    bottom: 0;
+
+    width: var(--panel-width);
+    height: 100%;
+}
+
+.panel-right {
+    top: 0;
+    right: 0;
+    left: auto;
+    bottom: 0;
+
+    width: var(--panel-width);
+    height: 100%;
+}
+
+.panel-top {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: auto;
+
+    width: 100%;
+    height: var(--panel-width);
+}
+
+.panel-bottom {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: auto;
+
+    width: 100%;
+    height: var(--panel-width);
+}
+
+
+/* =========================================================
+   29. BRAND / COLOR UTILITY CLASSES
+   ---------------------------------------------------------
+   These can be assigned dynamically by JS / Hoxton.
+========================================================= */
+
+.color-white {
+    color: var(--color-white) !important;
+}
+
+.color-black {
+    color: var(--color-black) !important;
+}
+
+.color-cosmos {
+    color: var(--color-cosmos) !important;
+}
+
+.color-dell-blue {
+    color: var(--color-dell-blue) !important;
+}
+
+.color-raven {
+    color: var(--color-raven) !important;
+}
+
+.color-mist {
+    color: var(--color-mist) !important;
+}
+
+.color-quartz {
+    color: var(--color-quartz) !important;
+}
+
+.color-titanium {
+    color: var(--color-titanium) !important;
+}
+
+.color-steel {
+    color: var(--color-steel) !important;
+}
+
+.color-ocean {
+    color: var(--color-ocean) !important;
+}
+
+.color-forest {
+    color: var(--color-forest) !important;
+}
+
+.color-teal {
+    color: var(--color-teal) !important;
+}
+
+.color-plum {
+    color: var(--color-plum) !important;
+}
+
+.color-dust {
+    color: var(--color-dust) !important;
+}
+
+
+/* Background color utilities */
+
+.bg-white {
+    background-color: var(--color-white) !important;
+}
+
+.bg-black {
+    background-color: var(--color-black) !important;
+}
+
+.bg-cosmos {
+    background-color: var(--color-cosmos) !important;
+}
+
+.bg-dell-blue {
+    background-color: var(--color-dell-blue) !important;
+}
+
+.bg-raven {
+    background-color: var(--color-raven) !important;
+}
+
+.bg-mist {
+    background-color: var(--color-mist) !important;
+}
+
+.bg-quartz {
+    background-color: var(--color-quartz) !important;
+}
+
+.bg-titanium {
+    background-color: var(--color-titanium) !important;
+}
+
+.bg-steel {
+    background-color: var(--color-steel) !important;
+}
+
+.bg-ocean {
+    background-color: var(--color-ocean) !important;
+}
+
+.bg-forest {
+    background-color: var(--color-forest) !important;
+}
+
+.bg-teal {
+    background-color: var(--color-teal) !important;
+}
+
+.bg-plum {
+    background-color: var(--color-plum) !important;
+}
+
+.bg-dust {
+    background-color: var(--color-dust) !important;
+}
+
+
+/* =========================================================
+   30. TEXT ALIGNMENT
+========================================================= */
+
+.text-left {
+    text-align: left !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.text-right {
+    text-align: right !important;
+}
+
+
+/* =========================================================
+   31. IMAGE POSITION HELPERS
+========================================================= */
+
+.image-top-left {
+    top: var(--global-top);
+    left: var(--global-left);
+    right: auto;
+    bottom: auto;
+}
+
+.image-top-center {
+    top: var(--global-top);
+    left: 50%;
+    right: auto;
+    bottom: auto;
+
+    transform: translateX(-50%);
+}
+
+.image-top-right {
+    top: var(--global-top);
+    right: var(--global-right);
+    left: auto;
+    bottom: auto;
+}
+
+.image-center-left {
+    top: 50%;
+    left: var(--global-left);
+    right: auto;
+    bottom: auto;
+
+    transform: translateY(-50%);
+}
+
+.image-center-center {
+    top: 50%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+
+    transform: translate(-50%, -50%);
+}
+
+.image-center-right {
+    top: 50%;
+    right: var(--global-right);
+    left: auto;
+    bottom: auto;
+
+    transform: translateY(-50%);
+}
+
+.image-bottom-left {
+    bottom: var(--global-bottom);
+    left: var(--global-left);
+    right: auto;
+    top: auto;
+}
+
+.image-bottom-center {
+    bottom: var(--global-bottom);
+    left: 50%;
+    right: auto;
+    top: auto;
+
+    transform: translateX(-50%);
+}
+
+.image-bottom-right {
+    bottom: var(--global-bottom);
+    right: var(--global-right);
+    left: auto;
+    top: auto;
+}
+
+
+/* =========================================================
+   32. ACCESSIBILITY / SAFETY
+========================================================= */
+
+[aria-hidden="true"] {
+    pointer-events: none;
+}
+
+.is-disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   33. DEFAULT FRAME CLASSES
+   ---------------------------------------------------------
+   Keeps every frame consistent while allowing
+   frame-specific overrides later.
+========================================================= */
+
+#frame01,
+#frame02,
+#frame03,
+#frame04,
+#frame05 {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+}
+
+
+/* =========================================================
+   34. FRAME-SPECIFIC VARIABLES
+   ---------------------------------------------------------
+   These are intentionally separate so Hoxton can later
+   control each frame independently.
+========================================================= */
+
+#frame01 {
+    --frame-copy-top: 14px;
+    --frame-copy-left: 14px;
+    --frame-copy-right: 14px;
+    --frame-copy-bottom: auto;
+}
+
+#frame02 {
+    --frame-copy-top: 14px;
+    --frame-copy-left: 14px;
+    --frame-copy-right: 14px;
+    --frame-copy-bottom: auto;
+}
+
+#frame03 {
+    --frame-copy-top: 14px;
+    --frame-copy-left: 14px;
+    --frame-copy-right: 14px;
+    --frame-copy-bottom: auto;
+}
+
+#frame04 {
+    --frame-copy-top: 14px;
+    --frame-copy-left: 14px;
+    --frame-copy-right: 14px;
+    --frame-copy-bottom: auto;
+}
+
+#frame05 {
+    --frame-copy-top: 14px;
+    --frame-copy-left: 14px;
+    --frame-copy-right: 14px;
+    --frame-copy-bottom: auto;
+}
+
+
+/* =========================================================
+   35. MOBILE SAFETY
+========================================================= */
+
+@media screen and (max-device-width: 480px) {
+
+    body {
+        -webkit-text-size-adjust: none;
+    }
+
+}
+```
