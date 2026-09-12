@@ -4,17 +4,18 @@
    Responsibility:
    1. Get dynamic data from Hoxton
    2. Prepare non-DOM configuration
-   3. Apply CSS variables / visibility / positions
+   3. Apply dynamic CSS variables
    4. Prepare frame timing & looping
    5. Start Creative timeline
 
    IMPORTANT:
    hoxton-v7.js already handles:
-   - image → DOM
-   - text → DOM
-   - textarea → DOM
-   - array → selected value
-   So this file should NOT duplicate those jobs.
+   - image -> DOM
+   - text -> DOM
+   - textarea -> DOM
+   - array -> selected value
+
+   This file only handles the values that need extra logic.
 ============================================================ */
 
 
@@ -24,7 +25,7 @@
 
 var _dynamicData = {};
 
-const root = document.documentElement;
+var root = document.documentElement;
 
 
 /* ============================================================
@@ -35,54 +36,39 @@ hoxton.timeline = Creative.tl;
 
 
 /*
-   Hoxton will call this function after:
-   - manifest is loaded
-   - dynamic data is available
-   - images are preloaded
+   Hoxton calls this function after the manifest has been
+   loaded and image assets have been preloaded.
 */
 hoxton.isInitialized = setDynamicContent;
 
 
 /* ============================================================
    MAIN ENTRY POINT
-   ------------------------------------------------------------
-   This is the FIRST function we control.
 ============================================================ */
 
 function setDynamicContent()
 {
     console.log("setDynamicContent()");
 
-    // 1. Get current Hoxton data
+    // Step 1: get current Hoxton state
     getDynamicData();
 
-    // 2. Prepare values that Creative.js needs
+    // Step 2: prepare values used by Creative.js
     setDynamicNonDomData();
 
-    // 3. Show banner so width/height can be measured
+    // Step 3: show banner so size can be measured
     Creative.displayBanner();
 
-    // 4. Apply current banner size
+    // Step 4: apply current banner size class
     setBannerSize();
 
-    // 5. Build and start animation timeline
+    // Step 5: build and start the GSAP timeline
     Creative.startAd();
 }
 
 
 /* ============================================================
    GET HOXTON DATA
-   ------------------------------------------------------------
-   Hoxton converts manifest data into a simple state object.
-
-   Example:
-
-   hoxton.json
-   headline_copy
-        ↓
-   hoxton.getState()
-        ↓
-   _dynamicData.headline_copy
 ============================================================ */
 
 function getDynamicData()
@@ -95,10 +81,6 @@ function getDynamicData()
 
 /* ============================================================
    NON-DOM CONFIGURATION
-   ------------------------------------------------------------
-   These are values that Creative.js needs to run the banner.
-
-   We keep this function simple and only CALL smaller functions.
 ============================================================ */
 
 function setDynamicNonDomData()
@@ -118,92 +100,132 @@ function setDynamicNonDomData()
 /* ============================================================
    THEME
    ------------------------------------------------------------
-   JSON → CSS custom properties
+   IMPORTANT:
+   The CSS uses these variables:
 
-   Example:
+       --color-background
+       --color-brand-logo
+       --color-headline
+       --color-subline
+       --color-badge
+       --color-funding
+       --color-cta-background
+       --color-cta-text
+       --color-panel-background
 
-   background_color = "color-ocean"
-
-   becomes:
-
-   --background-color: var(--color-ocean)
+   Therefore JS must update THESE variables.
 ============================================================ */
 
 function setTheme()
 {
-    setCSSVariable(
-        "--background-color",
+    setThemeVariable(
+        "--color-background",
         _dynamicData.background_color
     );
 
-    setCSSVariable(
-        "--logo-color",
+    setThemeVariable(
+        "--color-brand-logo",
         _dynamicData.brand_logo_color
     );
 
-    setCSSVariable(
-        "--headline-color",
+    setThemeVariable(
+        "--color-headline",
         _dynamicData.headline_copy_color
     );
 
-    setCSSVariable(
-        "--subline-color",
+    setThemeVariable(
+        "--color-subline",
         _dynamicData.subline_copy_color
     );
 
-    setCSSVariable(
-        "--badge-color",
+    setThemeVariable(
+        "--color-badge",
         _dynamicData.badge_copy_color
     );
 
-    setCSSVariable(
-        "--funding-color",
+    setThemeVariable(
+        "--color-funding",
         _dynamicData.funding_copy_color
     );
 
-    setCSSVariable(
-        "--cta-copy-color",
-        _dynamicData.cta_copy_color
-    );
-
-    setCSSVariable(
-        "--cta-bg-color",
+    setThemeVariable(
+        "--color-cta-background",
         _dynamicData.cta_bg_color
     );
 
-    setCSSVariable(
-        "--panel-bg-color",
+    setThemeVariable(
+        "--color-cta-text",
+        _dynamicData.cta_copy_color
+    );
+
+    setThemeVariable(
+        "--color-panel-background",
         _dynamicData.panel_bg_color
     );
 }
 
 
 /* ============================================================
-   CSS VARIABLE HELPER
+   THEME VARIABLE HELPER
+   ------------------------------------------------------------
+   Example:
+
+       input:
+       --color-background
+       color-dell-blue
+
+       output:
+       --color-background: var(--color-dell-blue)
 ============================================================ */
 
-function setCSSVariable(variableName, value)
+function setThemeVariable(variableName, colorToken)
 {
-    if (!value) return;
+    if (!colorToken)
+    {
+        return;
+    }
 
-    /*
-       Ignore "Auto"
-       because CSS should keep its existing/default value.
-    */
+    var value = colorToken.toString().trim();
 
-    if (value.toString().toLowerCase() === "auto")
+    if (!value)
     {
         return;
     }
 
     /*
+       "Auto" means keep the CSS default.
+    */
+
+    if (value.toLowerCase() === "auto")
+    {
+        return;
+    }
+
+    /*
+       If a raw color is supplied, use it directly.
+
        Example:
+       #0672CB
+    */
 
-       value = "color-white"
+    if (value.charAt(0) === "#")
+    {
+        root.style.setProperty(
+            variableName,
+            value
+        );
 
-       output:
+        return;
+    }
 
-       var(--color-white)
+    /*
+       Token value:
+
+       color-dell-blue
+
+       becomes:
+
+       var(--color-dell-blue)
     */
 
     root.style.setProperty(
@@ -215,41 +237,28 @@ function setCSSVariable(variableName, value)
 
 /* ============================================================
    SCALE
-   ------------------------------------------------------------
-   JSON:
-       scale = 1
-
-   CSS:
-       --scale: 1
 ============================================================ */
 
 function setScale()
 {
-    var scale = Number(_dynamicData.scale);
+    var scale = Number(
+        _dynamicData.scale
+    );
 
     if (!Number.isFinite(scale) || scale <= 0)
     {
         scale = 1;
     }
 
-    root.style.setProperty("--scale", scale);
+    root.style.setProperty(
+        "--scale",
+        scale
+    );
 }
 
 
 /* ============================================================
    BANNER SIZE
-   ------------------------------------------------------------
-   Adds:
-
-       size300x250
-
-   to #container.
-
-   Creative.js can then use:
-
-       .size300x250
-       .size728x90
-       etc.
 ============================================================ */
 
 function setBannerSize()
@@ -264,42 +273,32 @@ function setBannerSize()
 
 /* ============================================================
    VISIBILITY
-   ------------------------------------------------------------
-   Human-readable JSON values:
-
-       Show
-       Hide
-
-   JavaScript internally converts them to:
-
-       true
-       false
 ============================================================ */
 
 function setVisibility()
 {
     setElementVisibility(
-        "#brand_logo_container",
+        "brand_logo_container",
         _dynamicData.brand_logo_visibility
     );
 
     setElementVisibility(
-        "#funding_container",
+        "funding_container",
         _dynamicData.funding_visibility
     );
 
     setElementVisibility(
-        "#cta_container",
+        "cta_container",
         _dynamicData.cta_visibility
     );
 
     setElementVisibility(
-        "#panel",
+        "panel",
         _dynamicData.panel_visibility
     );
 
     setElementVisibility(
-        "#legal_trigger_container",
+        "legal_trigger_container",
         _dynamicData.legal_trigger_visibility
     );
 }
@@ -309,55 +308,42 @@ function setVisibility()
    ELEMENT VISIBILITY HELPER
 ============================================================ */
 
-function setElementVisibility(selector, value)
+function setElementVisibility(id, value)
 {
-    var element = document.querySelector(selector);
+    var element = document.getElementById(id);
 
     if (!element)
     {
         return;
     }
 
-    var normalizedValue =
-        String(value || "")
-            .trim()
-            .toLowerCase();
-
-
-    /*
-       Show
-       Enable
-       On
-       Visible
-    */
+    var state = String(value || "")
+        .trim()
+        .toLowerCase();
 
     if (
-        normalizedValue === "show" ||
-        normalizedValue === "enable" ||
-        normalizedValue === "on" ||
-        normalizedValue === "visible"
+        state === "show" ||
+        state === "enable" ||
+        state === "enabled" ||
+        state === "on" ||
+        state === "yes"
     )
     {
         element.style.display = "block";
+        element.style.visibility = "visible";
         return;
     }
 
-
-    /*
-       Hide
-       Disable
-       Off
-       Hidden
-    */
-
     if (
-        normalizedValue === "hide" ||
-        normalizedValue === "disable" ||
-        normalizedValue === "off" ||
-        normalizedValue === "hidden"
+        state === "hide" ||
+        state === "disable" ||
+        state === "disabled" ||
+        state === "off" ||
+        state === "no"
     )
     {
         element.style.display = "none";
+        element.style.visibility = "hidden";
     }
 }
 
@@ -365,17 +351,16 @@ function setElementVisibility(selector, value)
 /* ============================================================
    FRAME TIMING
    ------------------------------------------------------------
-   We use one JSON value:
+   Frame 1-4 use the timing array.
+   Frame 5 is the end frame.
 
-       frame_holdTime = "3,3,3,3"
-
-   Four values are enough because frame 5 is the final frame.
+   Example:
+       "3,3,3,4"
 ============================================================ */
 
 function setFrameTiming()
 {
     var defaultTime = 3;
-
     var value = _dynamicData.frame_holdTime;
 
     if (!value)
@@ -387,14 +372,13 @@ function setFrameTiming()
             defaultTime
         ];
 
+        _isStatic = false;
         return;
     }
-
 
     var values = value
         .toString()
         .split(",");
-
 
     _arrFrameWaits = [
         getNumber(values[0], defaultTime),
@@ -402,12 +386,6 @@ function setFrameTiming()
         getNumber(values[2], defaultTime),
         getNumber(values[3], defaultTime)
     ];
-
-
-    /*
-       If all frame times are zero,
-       Creative.js treats the banner as static.
-    */
 
     _isStatic =
         _arrFrameWaits[0] === 0 &&
@@ -433,40 +411,32 @@ function getNumber(value, fallback)
 
 /* ============================================================
    ANIMATION CONFIG
-   ------------------------------------------------------------
-   These variables belong to Creative.js.
-
-   JSON values are only used to configure them.
 ============================================================ */
 
 function setAnimationConfig()
 {
-    _fadeInSpeed =
-        getNumber(
-            _dynamicData.fadeInSpeed,
-            0.5
-        );
+    _fadeInSpeed = getNumber(
+        _dynamicData.fadeInSpeed,
+        0.5
+    );
 
-    _fadeOutSpeed =
-        getNumber(
-            _dynamicData.fadeOutSpeed,
-            0.3
-        );
+    _fadeOutSpeed = getNumber(
+        _dynamicData.fadeOutSpeed,
+        0.3
+    );
 }
 
 
 /* ============================================================
    LOOP CONFIG
    ------------------------------------------------------------
-   JSON:
+   Example:
 
-       loopingProps = "2,4,show"
+       "2,4,Show"
 
-   means:
-
-       total loops   = 2
-       delay          = 4 sec
-       replay button  = show
+       2 = repeat count
+       4 = repeat delay
+       Show = replay button enabled
 ============================================================ */
 
 function setLoopConfig()
@@ -478,55 +448,48 @@ function setLoopConfig()
         _totalLoops = 0;
         _endFrameDelay = 4;
         _useReplayBtn = true;
-
         return;
     }
-
 
     var values = value
         .toString()
         .split(",");
 
+    _totalLoops = getNumber(
+        values[0],
+        0
+    );
 
-    _totalLoops =
-        getNumber(values[0], 0);
+    _endFrameDelay = getNumber(
+        values[1],
+        4
+    );
 
-
-    _endFrameDelay =
-        getNumber(values[1], 4);
-
-
-    _useReplayBtn =
-        isEnabled(values[2], true);
+    _useReplayBtn = isEnabled(
+        values[2],
+        true
+    );
 }
 
 
 /* ============================================================
-   HUMAN-READABLE ON / OFF HELPER
-   ------------------------------------------------------------
-   JSON can say:
-
-       Show
-       Hide
-
-   JS internally gets:
-
-       true
-       false
+   HUMAN-READABLE ON / OFF
 ============================================================ */
 
 function isEnabled(value, defaultValue)
 {
-    if (value === undefined || value === null)
+    if (
+        value === undefined ||
+        value === null
+    )
     {
         return defaultValue;
     }
 
-    var normalized =
-        value.toString()
-            .trim()
-            .toLowerCase();
-
+    var normalized = value
+        .toString()
+        .trim()
+        .toLowerCase();
 
     if (
         normalized === "show" ||
@@ -539,7 +502,6 @@ function isEnabled(value, defaultValue)
         return true;
     }
 
-
     if (
         normalized === "hide" ||
         normalized === "disable" ||
@@ -551,7 +513,6 @@ function isEnabled(value, defaultValue)
         return false;
     }
 
-
     return defaultValue;
 }
 
@@ -562,27 +523,12 @@ function isEnabled(value, defaultValue)
 
 function setExitURL()
 {
-    var exitURL = _dynamicData.exit_url;
-
-    if (!exitURL)
+    if (!Creative || !Creative.setExitURL)
     {
         return;
     }
 
-    Creative.setExitURL(exitURL);
-}
-
-
-/* ============================================================
-   UTILITY
-   ------------------------------------------------------------
-   Remove whitespace and safely return text.
-============================================================ */
-
-function getText(value)
-{
-    return value === undefined ||
-           value === null
-        ? ""
-        : value.toString().trim();
+    Creative.setExitURL(
+        _dynamicData.exit_url || ""
+    );
 }
