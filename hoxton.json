@@ -1,13 +1,13 @@
 {
-  "name": "Hoxton_Master_Banner_Template_v1",
-  "reportingLabel": "Hoxton_Master_Banner_{width}x{height}",
-  "adType": "HTML5",
-  "adSize": {
-    "width": "300",
-    "height": "250"
-  },
-  "platform": "generic",
-  "backupQuality": "90",
+    "name": "Hogarth starterKit Boilerplate",
+    "reportingLabel": "{Message}_{Cta}_{width}x{height}",
+    "adType": "HTML5",
+    "adSize": {
+        "width": "300",
+        "height": "250"
+    },
+    "platform": "generic",
+    "backupQuality": "90",
 
   "content_margin": {
     "type": "text",
@@ -227,26 +227,26 @@
   },
 
   "f1_copy_campaign_badge": {
-    "type": "textarea",
-    "value": "",
+    "type": "text",
+    "value": "Cammpain Badge",
     "editableGroups": ["Message"]
   },
 
   "f1_copy_headline": {
-    "type": "textarea",
-    "value": "",
+    "type": "text",
+    "value": "Headline",
     "editableGroups": ["Message"]
   },
 
   "f1_copy_subline": {
     "type": "textarea",
-    "value": "",
+    "value": "Subline",
     "editableGroups": ["Message"]
   },
 
   "f1_extra": {
     "type": "textarea",
-    "value": "",
+    "value": "Extra",
     "editableGroups": ["Message"]
   },
 
@@ -635,7 +635,7 @@
 
   "exit_url": {
     "type": "text",
-    "value": "https://www.example.com",
+    "value": "https://www.dell.com",
     "editableGroups": ["CTA"]
   },
 
